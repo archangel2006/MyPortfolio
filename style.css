@@ -1,0 +1,437 @@
+/* Resetting default browser styles and box-sizing */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Ensure body has no margin */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #050517; /* Deeper space background */
+  overflow-x: hidden;
+  padding-top: 85px; /* Add padding equal to the navbar height */
+}
+
+/* Star canvas styles */
+#star-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2; /* Place it behind the hero content and navbar */
+}
+
+/* Navigation bar styles */
+.navbar {
+  position: fixed; /* Make the navbar fixed at the top */
+  top: 0; /* Position it at the top of the viewport */
+  left: 0; /* Position it at the left edge */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgb(30, 41, 59); /* Make the background solid (remove alpha) */
+  color: #f0f0f0; /* Light text */
+  width: 100%;
+  height: 100px;
+  border-bottom: 1px solid rgba(80, 100, 130, 0.5); /* Subtle border */
+  z-index: 1000; /* Ensure it's on top of everything else */
+}
+
+.logo {
+  height: 60px;
+  width: 60px;
+  margin-left: 10px;
+  margin-right: 10px;
+  border: 1.5px solid #a2d4e6; /* Aqua border */
+  border-radius: 5px;
+}
+
+.site {
+  font-size: 20px;
+  font-weight: 300;
+  margin-right: auto;
+  color: #a2d4e6; /* Aqua site name */
+}
+
+.nav-items {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding-right: 20px;
+}
+
+.nav-items a {
+  text-decoration: none;
+  color: #d3dbe4; /* Light grey navigation links */
+  font-weight: 400;
+  transition: color 0.3s, transform 0.3s; /* Add transition for transform property */
+}
+
+.nav-items a:hover {
+  color: #a2d4e6; /* Aqua hover effect */
+  transform: scale(1.05); /* Slightly zoom in on hover */
+}
+
+.btn {
+  padding: 8px 15px;
+  background-color: #5c9db1; /* Light blue button */
+  border: none;
+  border-radius: 7px;
+  color: #050517; /* Dark text on button */
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: #a2d4e6; /* Aqua hover on button */
+}
+
+:root {
+  --dark-space: #050517;
+  --star-white: #f0f0f0;
+  --space-accent-light: #5c9db1;
+  --space-accent-aqua: #a2d4e6;
+  --space-text-light: #d3dbe4;
+}
+
+/* Hero Section */
+.hero {
+  height: 100vh;
+  background: linear-gradient(to bottom right, rgba(10, 10, 30, 0.8), rgba(20, 20, 60, 0.8)); /* Darker, translucent hero */
+  position: relative;
+  display: flex; /* Enable flexbox for aligning content */
+  align-items: center; /* Vertically align items in the center */
+  justify-content: space-between; /* Distribute space between content and image */
+  color: var(--space-text-light);
+  padding: 50px;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent url("data:image/svg+xml,%3Csvg%20width%3D%22100%25%22%20height%3D%22100%25%22%20viewBox%3D%220%200%20100%20100%22%20xmlns%3D%22http://www.w3.org/2000/svg%22%3E%3Ccircle%20cx%3D%223%22%20cy%3D%223%22%20r%3D%220.5%22%20fill%3D%22%23f0f0f0%22%20/%3E%3C/svg%3E") repeat;
+  animation: moveStars 100s linear infinite;
+  z-index: 0;
+  opacity: 0.4; /* Slightly more visible stars */
+}
+
+/* Hero content */
+.hero-content {
+  flex: 1.5; /* Give it more weight to take up more space */
+  padding-right: 40px; /* Add some spacing between text and image */
+  z-index: 1;
+  max-width: 60%; /* Limit its maximum width */
+  display: flex; /* Enable flexbox for vertical alignment */
+  flex-direction: column; /* Stack the content vertically */
+  justify-content: center; /* Vertically center the content */
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  color: var(--space-accent-aqua);
+  text-shadow: 0 0 8px var(--space-accent-light), 0 0 12px var(--space-accent-aqua);
+  margin-bottom: 10px; /* Add some space below the main heading */
+}
+
+.hero-content h2 {
+  font-size: 2rem;
+  color: var(--space-accent-light);
+  margin-bottom: 20px; /* Add more space below the subheading */
+}
+
+.hero-content p {
+  font-size: 1rem;
+  margin-top: 0; /* Reset default margin-top */
+  margin-bottom: 30px; /* Add space before the social icons */
+  color: var(--space-text-light);
+}
+
+.hero-content .highlight {
+  color: var(--space-accent-aqua);
+}
+
+.hero-content .typed-text {
+  color: var(--space-accent-aqua);
+}
+
+.socials {
+  /* You can add specific styling for the socials container if needed */
+}
+
+.socials a {
+  margin: 0 10px;
+  color: var(--space-accent-aqua);
+  font-size: 1.5rem;
+  transition: color 0.3s, transform 0.3s;
+  text-decoration: none;
+}
+
+.socials a:hover {
+  color: var(--space-accent-light);
+  transform: scale(1.1);
+}
+
+.socials a i {
+  font-size: 1.5rem;
+}
+
+/* Hero image */
+.hero-img {
+  width: 40%; /* Reduce the width of the image container */
+  max-width: 40%; /* Ensure it doesn't exceed this width */
+  z-index: 1;
+  display: flex; /* Enable flexbox for centering the image */
+  justify-content: center; /* Center the image horizontally */
+}
+
+.hero-img img {
+  width: auto; /* Adjust width based on container and aspect ratio */
+  max-width: 80%; /* Ensure image doesn't get too large */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 50%;
+  box-shadow: 0 0 50px var(--space-accent-light);
+}
+
+/* EDUCATION */
+.education {
+  padding-top: 120px; /* Add top padding to avoid overlapping the fixed navbar and heading */
+  padding-bottom: 80px;
+  padding-left: 50px;
+  padding-right: 50px;
+  color: var(--space-text-light);
+  background-color: #0a0a2e;
+  min-height: 100vh; /* Ensure the education section takes up at least the full viewport height */
+}
+
+.education h2 {
+  font-size: 2.5rem;
+  color: var(--space-accent-aqua);
+  text-align: center;
+  margin-bottom: 60px; /* Increase margin below heading */
+}
+
+.timeline-container {
+  display: flex;
+  position: relative;
+  margin: 0 auto;
+  max-width: 95%;
+  padding: 60px 20px 60px 80px; /* Increased padding-left */
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.timeline-line {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  width: calc(100% - 40px);
+  height: 2px;
+  background-color: var(--space-accent-light);
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+.timeline-item {
+  width: 250px; /* Increased width of containers */
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  margin: 50px 20px; /* Adjust vertical margin */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.circle {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--space-accent-aqua);
+  border: 2px solid var(--dark-space);
+  z-index: 3;
+}
+
+.timeline-item .content {
+  background-color: rgba(30, 41, 59, 0.8);
+  border-radius: 5px;
+  padding: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  width: 100%;
+}
+
+.timeline-item .content {
+    /* Existing styles */
+    transition: transform 0.3s ease-in-out; /* Add a smooth transition for the zoom effect */
+}
+  
+.timeline-item:hover .content {
+    transform: scale(1.20); /* Increase the scale on hover (adjust value for desired zoom) */
+    box-shadow: #d4d4e4;
+}
+
+/* Force all content above the line */
+.timeline-item .content {
+  bottom: calc(100% + 15px);
+}
+
+
+.timeline-item:nth-of-type(1) { /* BBPS */
+  align-self: flex-start;
+  margin: 50px 60px 50px 60px; /* Top, Right, Bottom, Left margin */
+}
+
+.timeline-item:nth-of-type(2) { /* CJM */
+  align-self: center;
+  margin-top: 80px;
+  margin-left: -40px; /* Counteract some of the container padding */
+}
+
+.timeline-item:nth-of-type(3) { /* IGDTUW */
+  align-self: flex-start;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .education {
+    padding-top: 100px;
+  }
+
+  .timeline-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+  }
+
+  .timeline-line {
+    top: 0;
+    left: 50%;
+    width: 2px;
+    height: 100%;
+    transform: translateX(-50%);
+  }
+
+  .timeline-item {
+    width: 80%;
+    margin: 60px 0;
+    align-self: auto; /* Reset align-self */
+  }
+
+  .timeline-item .content {
+    position: static;
+    margin-top: 15px;
+  }
+}
+/* Adjust horizontal spacing between items */
+.timeline-item:not(:first-child) {
+  margin-left: 30px; /* Reduce left margin for better spacing with wider boxes */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .education {
+    padding-top: 100px;
+  }
+
+  .timeline-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+  }
+
+  .timeline-line {
+    top: 0;
+    left: 50%;
+    width: 2px;
+    height: 100%;
+    transform: translateX(-50%);
+  }
+
+  .timeline-item {
+    width: 80%;
+    margin: 60px 0; /* Increase vertical margin in vertical layout */
+  }
+
+  .timeline-item .content {
+    position: static;
+    margin-top: 15px;
+  }
+}
+
+/* SKILLS */
+.skills {
+  padding: 80px 50px;
+  color: var(--space-text-light);
+  background-color: #15153b;
+}
+
+.skills h2 {
+  font-size: 2.5rem;
+  color: var(--space-accent-aqua);
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.skills-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive 2x2 grid */
+  gap: 20px;
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+.skill-category {
+  background-color: rgba(30, 41, 59, 0.8);
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out; /* Transition for individual category hover */
+}
+
+.skill-category:hover {
+  transform: scale(1.05); /* Slight zoom on category hover */
+}
+
+.skill-category h3 {
+  font-size: 1.3rem;
+  color: var(--space-accent-aqua);
+  margin-bottom: 15px;
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skill-tag {
+  background-color: #364759; /* Darker background for tags */
+  color: var(--space-text-lighter);
+  padding: 8px 15px;
+  border-radius: 20px; /* Pill shape */
+  font-size: 0.85rem;
+  transition: background-color 0.2s ease-in-out; /* Transition for tag hover */
+  cursor:pointer;
+}
+
+.skill-tag:hover {
+  background-color: rgba(var(--space-accent-aqua-rgb)); /* Lighter and transparent accent color */
+}
+
+/* Responsive adjustments for skills */
+@media (max-width: 600px) {
+  .skills-container {
+    grid-template-columns: 1fr; /* Single column on smaller screens */
+  }
+}
