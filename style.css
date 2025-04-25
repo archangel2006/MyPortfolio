@@ -202,6 +202,7 @@ body {
   box-shadow: 0 0 50px var(--space-accent-light);
 }
 
+
 /* EDUCATION */
 .education {
   padding-top: 120px; /* Add top padding to avoid overlapping the fixed navbar and heading */
@@ -548,5 +549,122 @@ body {
 @media (max-width: 768px) {
     .projects-grid {
         grid-template-columns: 1fr;
+    }
+}
+
+/*CONTACT*/
+.contact-section {
+    padding: 80px 20px;
+    text-align: center;
+    background-color: #0a0a2e;
+}
+
+.contact-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #a2d4e6;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact-form .input-group {
+    width: 100%;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.contact-form label {
+    margin-bottom: 8px;
+    color: #d3dbe4;
+    font-weight: 400;
+    font-size: 1rem;
+    display: block;
+    text-align: left;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #506482;
+    border-radius: 5px;
+    background-color: #1e293b;
+    color: #d3dbe4;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+    outline: none;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #a2d4e6;
+}
+
+.contact-form textarea {
+    resize: vertical;
+    height: 150px;
+}
+
+.contact-form button {
+    padding: 10px 20px;
+    background-color: #5c9db1;
+    color: #050517;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+    align-self: center;
+}
+
+.contact-form button:hover {
+    background-color: #a2d4e6;
+}
+
+.contact-details {
+    margin-top: 60px;
+    text-align: center;
+}
+
+.contact-details p {
+    font-size: 1rem;
+    color: #d3dbe4;
+    margin-bottom: 10px;
+}
+
+.contact-details a {
+    color: #a2d4e6;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-details a:hover {
+    color: #5c9db1;
+}
+
+@media (max-width: 768px) {
+    .contact-section {
+        padding: 60px 10px;
+    }
+
+    .contact-section h2 {
+        font-size: 2rem;
+    }
+
+    .contact-form {
+        max-width: 90%;
+    }
+
+    .contact-form .input-group {
+        width: 100%;
     }
 }
